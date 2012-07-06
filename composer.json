@@ -1,8 +1,11 @@
 {
-    "name": "Masterminds/Fortissimo-Twig",
-    "description": "Fortissimo bridge to Twig",
-    "require": {
-        "php": ">=5.3.2",
-        "twig/twig": ">=1.1,<2.0-dev"
-    }
+  "name": "Masterminds/Fortissimo-Twig",
+  "description": "Fortissimo bridge to Twig",
+  "require": {
+      "php": ">=5.3.2",
+      "twig/twig": ">=1.1,<2.0-dev"
+  },
+  "autoload": {
+    "psr-0": { "Fortissimo\\Twig": "src/" }
+  }
 }
