@@ -4,6 +4,8 @@
  * A Fortissimo Command to setup Twig through Strings to use for output generation.
  */
 
+namespace Fortissimo\Twig;
+
 /**
  * Setup Twig string templates and add the enviornment to the context.
  * 

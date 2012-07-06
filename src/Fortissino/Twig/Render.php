@@ -4,6 +4,8 @@
  * A Fortissimo Command to render a Twig template.
  */
 
+namespace Fortissimo\Twig;
+
 /**
  * This command renders a Twig template.
  *

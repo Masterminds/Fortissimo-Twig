@@ -4,6 +4,8 @@
  * A Fortissimo Command to setup Twig Templates to use for output generation.
  */
 
+namespace Fortissimo\Twig;
+
 /**
  * Setup Twig filesystem templates and add the enviornment to the context.
  * 
