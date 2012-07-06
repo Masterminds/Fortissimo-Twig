@@ -9,7 +9,7 @@
  *
  * For more information on the API visit http://twig.sensiolabs.org/doc/api.html
  */
-class SetupStringTemplates extends \Fortissimo\Command\Base {
+class Render extends \Fortissimo\Command\Base {
   public function expects() {
     return $this->description('Setup a Twig enviornment that uses strings for templates.')
       ->usesParam('enviornment', 'A twig enviornment to render the template.')
