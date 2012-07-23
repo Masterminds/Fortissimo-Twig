@@ -19,22 +19,21 @@ class Render extends \Fortissimo\Command\Base {
       ->usesParam('template', 'The template to render. This can be a path to a template file for filesystem templates or a string for a template as a string.')
         ->withFilter('string')
         ->whichIsRequired()
-      ->usesParam('variables', 'The variables to use in the template.')
-        ->withFilter('array')
+      ->usesParam('variables', 'The variables to use in the template as an array.')
       ->usesParam('print', 'Whether to print the template or return the rendered output (defaults to TRUE).')
         ->withFilter('boolean')
+        ->whichHasDefault(TRUE)
       ->andReturns('If print is set to TRUE nothing is returned. If set to FALSE a string with the rendered template is returned.')
     ;
   }
 
   public function doCommand() {
-
     $enviornment = $this->param('enviornment');
-    $template = $this->param('template');
+    $file = $this->param('template');
     $variables = $this->param('variables', array());
-    $print = $this->param('print', TRUE);
+    $print = $this->param('print');
 
-    $template = $enviornment->loadTemplate($template);
+    $template = $enviornment->loadTemplate($file);
 
     $output = $template->render($variables);
 
