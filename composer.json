@@ -1,10 +1,17 @@
 {
-  "name": "Masterminds/Fortissimo-Twig",
+  "name": "masterminds/fortissimo-twig",
   "description": "Fortissimo bridge to Twig",
   "require": {
       "php": ">=5.3.2",
       "twig/twig": ">=1.1,<2.0-dev"
   },
+  "authors": [
+    {
+      "name": "Matt Farina",
+      "email": "matt@mattfarina.com"
+    }
+  ],
+  "license": "MIT",
   "autoload": {
     "psr-0": { "Fortissimo\\Twig": "src/" }
   }
