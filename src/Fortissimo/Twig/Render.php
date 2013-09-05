@@ -13,8 +13,8 @@ namespace Fortissimo\Twig;
  */
 class Render extends \Fortissimo\Command\Base {
   public function expects() {
-    return $this->description('Setup a Twig enviornment that uses strings for templates.')
-      ->usesParam('enviornment', 'A twig enviornment to render the template.')
+    return $this->description('Setup a Twig environment that uses strings for templates.')
+      ->usesParam('environment', 'A twig environment to render the template.')
         ->whichIsRequired()
       ->usesParam('template', 'The template to render. This can be a path to a template file for filesystem templates or a string for a template as a string.')
         ->withFilter('string')
@@ -28,12 +28,12 @@ class Render extends \Fortissimo\Command\Base {
   }
 
   public function doCommand() {
-    $enviornment = $this->param('enviornment');
+    $environment = $this->param('environment');
     $file = $this->param('template');
     $variables = $this->param('variables', array());
     $print = $this->param('print');
 
-    $template = $enviornment->loadTemplate($file);
+    $template = $environment->loadTemplate($file);
 
     $output = $template->render($variables);
 
