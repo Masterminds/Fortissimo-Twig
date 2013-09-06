@@ -19,7 +19,7 @@ class Render extends \Fortissimo\Command\Base {
       ->usesParam('template', 'The template to render. This can be a path to a template file for filesystem templates or a string for a template as a string.')
         ->withFilter('string')
         ->whichIsRequired()
-      ->usesParam('variables', 'The variables to use in the template as an array.')
+      ->usesParam('variables', 'The variables to use in the template as an array. "cxt" is always put into variables.')
       ->usesParam('print', 'Whether to print the template or return the rendered output (defaults to TRUE).')
         ->withFilter('boolean')
         ->whichHasDefault(TRUE)
@@ -35,6 +35,7 @@ class Render extends \Fortissimo\Command\Base {
 
     $template = $environment->loadTemplate($file);
 
+    $variables['cxt'] = $this->context;
     $output = $template->render($variables);
 
     if ($print) {
