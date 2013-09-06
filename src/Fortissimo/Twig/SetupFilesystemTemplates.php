@@ -44,7 +44,7 @@ class SetupFilesystemTemplates extends \Fortissimo\Command\Base {
     $settings = array(
       'debug' => $this->param('debug', FALSE),
       'cache' => $this->param('cache', FALSE),
-      'charset' => $this->param('charset', 'utf-8'),
+      'charset' => $this->param('charset', 'utf8'), // mb uses 'utf8', not 'utf-8'.
       'base_template_class' => $this->param('base_template_class', 'Twig_Template'),
       'strict_variables' => $this->param('strict_variables', FALSE),
       'autoescape' => $this->param('autoescape', TRUE),
