@@ -35,7 +35,7 @@ class Render extends \Fortissimo\Command\Base {
 
     $template = $environment->loadTemplate($file);
 
-    $variables['cxt'] = $this->contexti->toArray();
+    $variables['cxt'] = $this->context->toArray();
     $output = $template->render($variables);
 
     if ($print) {
